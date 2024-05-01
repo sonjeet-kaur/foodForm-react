@@ -1,0 +1,60 @@
+
+.coustom_container {
+    max-width: 1350px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  
+  
+    @media ($breakpoint_XL) {
+      padding: 0 40px;
+    }
+  
+    @media ($breakpoint_LG) {
+      padding: 0 30px;
+    }
+  
+    @media ($breakpoint_MD) {
+      padding: 0 18px;
+    }
+  
+    @media ($breakpoint_SM) {
+      padding: 0 15px;
+    }
+  }
+
+  input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+h1{
+  font-family: "Manrope", sans-serif;
+  font-weight: 900 !important;
+  @media($breakpoint_SM){
+    font-size: 40px !important;
+
+  }
+  @media($breakpoint_ESM){
+    font-size: 28px !important;
+  }
+}
+
+p{
+  font-family: "Barlow", sans-serif;
+  font-weight: 500 !important;
+  @media($breakpoint_450){
+    font-size: 15px !important;
+   }
+}
+
+h3{
+  @media($breakpoint_450){
+  font-size: 19px !important;
+ }
+
+}
+

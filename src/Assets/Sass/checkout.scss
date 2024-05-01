@@ -1,0 +1,228 @@
+.checkout-section {
+  padding: 120px 0;
+  .check-upper {
+    text-align: center;
+    background-color: $green;
+    margin-bottom: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+  .check-summary {
+    border: 1px solid $borderh-color;
+    border-radius: 10px;
+    padding: 20px;
+    height: 485px;
+    h4 {
+      color: $green;
+      margin-bottom: 30px;
+    }
+    .check-sum-content {
+      .check-sub-total {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .delivery-charge {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .total-amt {
+        border-top: 1px solid $black-text;
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+      }
+    }
+    .checkout-product {
+      margin-top: 30px;
+      height: 200px;
+      overflow: scroll;
+      .product-inner {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+        .product-pic {
+          img {
+            width: 80px;
+          }
+        }
+        .product-pic-detail {
+          h6 {
+            font-size: 16px;
+            margin-bottom: 0;
+          }
+          .product-rating {
+            display: flex;
+            align-items: center;
+            svg {
+              color: #f4a263;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .returning {
+    padding: 20px;
+    border: 1px solid $borderh-color;
+    border-radius: 10px;
+    @media ($breakpoint_LG) {
+      margin-top: 20px;
+    }
+    .return-inner {
+      h4 {
+        margin-bottom: 30px;
+        color: $green;
+      }
+      .form-email {
+        margin-bottom: 20px;
+        .form-control {
+          outline: none;
+          box-shadow: none;
+          border-color: #dee2e6;
+          margin-top: 10px;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+  .delivery-methods {
+    border: 1px solid $borderh-color;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 20px;
+    h4 {
+      color: $green;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 14px;
+      color: $para-color;
+    }
+    .ratio-mark {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .fre-ship {
+        display: flex;
+        flex-direction: column;
+        span {
+          font-size: 17px;
+        }
+        .ship-radio {
+          display: flex;
+          gap: 5px;
+          align-items: center;
+          label {
+            color: $para-color;
+            font-size: 16px;
+          }
+        }
+      }
+      .flat-rates {
+        display: flex;
+        flex-direction: column;
+        span {
+          font-size: 17px;
+        }
+        .ship-radio {
+          display: flex;
+          gap: 5px;
+          align-items: center;
+          label {
+            color: $para-color;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    .un-commt {
+      margin-top: 15px;
+      span {
+        font-size: 15px;
+      }
+      textarea {
+        width: 100%;
+        color: $para-color;
+        margin-top: 5px;
+        padding: 10px 5px;
+        outline: none;
+        border: 1px solid $borderh-color;
+      }
+    }
+  }
+  .payment-method {
+    border: 1px solid $borderh-color;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    height: 335px;
+    @media ($breakpoint_LG) {
+      height: 315px;
+    }
+    h4 {
+      color: $green;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 14px;
+      color: $para-color;
+    }
+    .pay-method {
+      .cash-on {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 10px;
+        label {
+          color: $para-color;
+          font-size: 15px;
+        }
+      }
+    }
+    .pic-card {
+      margin-top: 30px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .checkin-buttons {
+    // border: 1px solid $borderh-color;
+    margin-top: 20px;
+    height: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    @media ($breakpoint_LG) {
+      align-items:center;
+      justify-content: end;
+      height: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      background-color: $dark-green;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: 0.5s linear;
+
+      &:hover {
+        background-color: $green;
+      }
+    }
+  }
+}

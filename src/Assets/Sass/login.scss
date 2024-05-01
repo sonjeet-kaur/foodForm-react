@@ -1,0 +1,226 @@
+.log-section {
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  // &::after {
+  //   position: absolute;
+  //   content: '';
+  //   width: 100%;
+  //   height: 100%;
+  //   top: 0;
+  //   left: 0;
+  //   z-index: -1;
+  //   background-image: url('../Images/flat.jpeg');
+  //   background-repeat: no-repeat;
+  //   background-position: center;
+  //   background-size: cover;
+  // }
+  .login-outer {
+    border: 1px solid $green;
+    max-width: 520px;
+    padding: 30px;
+    border-radius: 70px 0 70px 0;
+    box-shadow: 0 0 5px #edf9f4;
+    @media ($breakpoint_LG) {
+      margin: auto;
+      backdrop-filter: blur(5px);
+    }
+    @media ($breakpoint_ESM) {
+      padding: 30px 20px;
+    }
+    .login-inner {
+    .log-h {
+      h1 {
+        text-align: center;
+        color: $black-text;
+        margin-bottom: 50px;
+        width: 200px;
+        height: 75px; 
+        background-color: $green;
+        position: relative;
+        top: -65px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius:0px 20px;
+
+      }
+      .for-pass {
+        width: 380px;
+      }
+      .reset-pass {
+        width: 380px;
+      }
+    }
+    .log-hr {
+      h1 {
+        text-align: center;
+        color: $black-text;
+        margin-bottom: 50px;
+        width: 200px;
+        height: 65px; 
+        background-color: $green;
+        position: relative;
+        top: -32px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius:0px 20px;
+
+      }
+      .for-pass {
+        width: 380px;
+      }
+      .reset-pass {
+        width: 380px;
+      }
+    }
+      .form-login {
+        .form-icon {
+          position: relative;
+          .log-inp {
+            width: 100%;
+            border-bottom: 1px solid $black-text !important;
+            background-color: transparent;
+            border: none;
+            // border-left: 4px solid $green;
+            color: $black-text;
+            border-radius: 0;
+            outline: none;
+            box-shadow: none;
+            margin-bottom: 15px;
+            padding: 10px 40px 10px 10px;
+          }
+          .log-inp1 {
+            width: 100%;
+            border-bottom: 1px solid $black-text !important;
+            // border-left: 4px solid $green !important;
+            background-color: transparent;
+            border: none;
+            color: $black-text;
+            border-radius: 0;
+            outline: none;
+            box-shadow: none;
+            margin-bottom: 15px;
+            padding: 10px 40px 10px 10px;
+          }
+          .log-inp2 {
+            width: 100%;
+            border-bottom: 1px solid $black-text !important;
+            // border-left: 4px solid $green !important;
+            background-color: transparent;
+            border: none;
+            color: $black-text;
+            border-radius: 0;
+            outline: none;
+            box-shadow: none;
+            margin-bottom: 15px;
+            padding: 10px 40px 10px 10px;
+          }
+         
+         
+          svg {
+            color: $green;
+            position: absolute;
+            right: 8px;
+            top: 10px;
+          }
+          .on-btn {
+            background: none;
+            border: none;
+            color: $green;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            outline: none;
+            box-shadow: none;
+          }
+        }
+      }
+      .form-btns {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        @media ($breakpoint_50) {
+          padding: 0;
+        }
+        .login-btn {
+          background-color: $green;
+          padding: 10px 26px;
+          text-decoration: none;
+          color: $white;
+          border-radius: 20px 0;
+          border: 2px solid $green;
+          transition: .5s linear;
+          &:hover {
+          border: 2px solid $green;
+          background-color: transparent;
+          color: $black-text;
+          border-radius: 0 20px;
+          }
+        }
+        .forg-btn {
+          width: 100%;
+          text-align: center;
+        }
+        .reset-btn {
+        width: 100%;
+        text-align: center  ;
+      }
+
+      
+        .forgot-btn {
+          color: $black-text;
+          text-decoration: none;
+          &:hover {
+            color: $green;
+            text-decoration: underline;
+          }
+        }
+      }
+      .form2-btns {
+        display: flex;
+        justify-content: center;
+        .regis-btn {
+          width: 100%;
+          text-align: center;
+        }
+      }
+      .nxt-page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0;
+        gap: 5px;
+        p {
+          font-size: 16px;
+          margin-bottom: 0;
+          @media ($breakpoint_50) {
+            font-size: 14px;
+          }
+        }
+        a {
+          text-decoration: none;
+          color: $green;
+          @media ($breakpoint_50) {
+            font-size: 15px;
+          }
+          &:hover {
+            // color: $black-text;
+            text-decoration: underline;
+          }
+        }
+      }
+
+    }
+  }
+  .reg-out {
+    padding: 0 30px 10px;
+  }
+}

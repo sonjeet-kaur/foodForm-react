@@ -1,0 +1,271 @@
+.our-product {
+    padding: 50px 0px;
+    background: $light-white;
+
+    .popular-product {
+        text-align: center;
+        font-size: 40px;
+        font-weight: 700;
+        color: $green;
+
+    }
+
+    .lorem {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+        color: $black-text;
+
+        br {
+            @media($breakpoint_SM) {
+                display: none;
+            }
+        }
+    }
+
+    .react-tabs {
+        .react-tabs__tab-list {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 10px;
+
+            @media($breakpoint_MD) {
+                overflow: scroll;
+                justify-content: space-between;
+            }
+
+            .react-tabs__tab {
+                padding: 10px 36px;
+                font-size: 20px;
+                font-weight: 500;
+                transition: all 0.3s linear;
+                cursor: pointer;
+                font-family: "Bebas Neue", sans-serif;
+                border-radius: 10px;
+
+                &:hover {
+                    background: $green;
+                    color: $white-text;
+
+                }
+
+
+            }
+
+            .react-tabs__tab--selected {
+                background: $green;
+                border-radius: 10px;
+
+                &:focus-visible {
+                    outline: none;
+                }
+            }
+        }
+
+        .react-tabs__tab-panel {
+            margin-top: 50px;
+
+            .first-panel {
+                .first-card {
+                    background: $white-color;
+                    padding: 14px 10px;
+                    border-radius: 10px;
+                    margin-bottom: 14px;
+                    transform: scale(0.9);
+                    transition: all 0.3s linear;
+
+                    .image-div {
+                        position: relative;
+
+                        img {
+                            width: 100%;
+                            height: 270px;
+                            border-radius: 10px;
+
+                            @media($breakpoint_SM) {
+                                height: 280px;
+                            }
+                        }
+
+                        .new-badge {
+                            position: absolute;
+                            right: 0px;
+                            background: $green;
+                            padding: 7px 25px;
+                            clip-path: polygon(100% 0, 100% 55%, 100% 100%, 2% 100%, 18% 50%, 0% 0%);
+                            font-size: 17px;
+                            padding: 6px 33px;
+                            width: auto;
+                            top: 10px;
+
+
+                        }
+
+                        .wish-list {
+                            color: $black-text;
+                            background: $green;
+                            width: 42px;
+                            padding: 7px 3px;
+                            height: 44px;
+                            border-radius: 50%;
+                            cursor: pointer;
+                            transition: all 0.3s linear;
+                            font-size: 33px;
+
+                            &:hover {
+                                color: red;
+                            }
+                        }
+
+                        .add-cart-div {
+                            display: flex;
+                            margin: auto;
+                            position: absolute;
+                            justify-content: center;
+                            width: 100%;
+                            bottom: 20px;
+                            opacity: 0;
+                            transition: all 0.3s linear;
+
+                            .add-cart {
+                                background: $green;
+                                font-size: 13px;
+                                font-weight: 500;
+                                border-radius: 50%;
+                                padding: 10px;
+                                width: auto;
+                                white-space: nowrap;
+                                text-align: center;
+                                margin: 0 10px;
+                                border: none;
+                                transition: all 0.3s linear;
+
+                                &:hover {
+                                    color: $white-text;
+                                }
+                            }
+
+                            .cart-btns {
+                                background: transparent;
+                                border: none;
+                            }
+                        }
+                    }
+
+                    .title {
+                        text-align: center;
+                        padding: 10px 0px;
+                        margin: 0;
+                        font-size: 20px;
+                        color: $black-text;
+                    }
+
+                    .discription {
+                        text-align: center;
+                        color: grey;
+                        font-weight: 500;
+                        font-size: 18px;
+                        padding: 0 30px;
+
+                        @media($breakpoint_SM) {
+                            padding: 0;
+                        }
+                    }
+
+                    .mrp {
+                        text-align: center;
+                        font-size: 20px;
+                        font-weight: 700;
+                        color: $green;
+                    }
+
+                    &:hover {
+                        .image-div {
+                            .add-cart-div {
+                                bottom: 40px;
+                                opacity: 1;
+                            }
+
+
+                        }
+                    }
+                }
+                .swiper-button-prev{
+                    background: #63b496;
+                    padding: 5px;
+                    border-radius: 50%;
+                    width: 42px;
+                    &::after{
+                        font-size: 22px;
+                        color: black;
+                        font-weight: 900;
+                    }
+                }
+                .swiper-button-next{
+                    background: #63b496;
+                    padding: 5px;
+                    border-radius: 50%;
+                    width: 42px;
+                    &::after{
+                        font-size: 22px;
+                        color: black;
+                        font-weight: 900;
+                    }
+                }
+                .swiper-slide-shadow-left{
+                    display: none;
+                }
+                .swiper-slide-shadow-right{
+                    display: none;
+                }
+                .swiper-slide{
+                    width: 445px;
+                }
+                .row {
+
+                    .paginate-done {
+
+                        list-style: none;
+                        padding: 0;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        justify-content: center;
+                        .previous{
+                            background: $green;
+                            text-decoration: none;
+                            padding: 8px 16px;
+                            border-radius: 21px;
+                            height: 44px;
+                            width: 42px;
+                            a{
+                            color: white;
+                            text-decoration: none;
+                            }
+                        }
+                        .next{
+                            background: $green;
+                            text-decoration: none;
+                            padding: 8px 16px;
+                            border-radius: 21px;
+                            height: 44px;
+                            width: 42px;
+                            a{
+                            color: white;
+                            text-decoration: none;
+                            }
+                        }
+                        li{
+                            font-size: 18px;
+                        }
+
+                    }
+
+                }
+            }
+        }
+    }
+}

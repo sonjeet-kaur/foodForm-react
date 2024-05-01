@@ -1,0 +1,369 @@
+.pro-section {
+  padding: 60px 0 40px;
+  margin-top: 70px;
+  .products-name {
+    text-align: center;
+    background-color: var(--green);
+    margin-bottom: 50px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .pro-detals-pic {
+    .react-tabs {
+      .react-tabs__tab-list {
+        margin-top: 30px;
+        border: none;
+        .react-tabs__tab--selected {
+          border: none;
+        }
+      }
+    }
+    .dieting-pics {
+      img {
+        width: 100%;
+      }
+    }
+    .sm-diet {
+      .diet-pics {
+        width: 80px;
+      }
+    }
+  }
+  .product-content {
+    padding: 0 20px 20px;
+    @media ($breakpoint_ESM) {
+      padding: 10px 0 20px;
+    }
+    .pro-detal-head {
+      h3 {
+      }
+      p {
+        color: $para-color;
+      }
+    }
+    .pro-detal-review {
+      border-top: 1px solid $borderh-color;
+      .rating-star {
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
+        svg {
+          color: #f4a263;
+        }
+      }
+      .detail-list {
+        ul {
+          padding: 0;
+          li {
+            padding: 5px 0;
+            color: $para-color;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            label {
+              min-width: 100px;
+              margin-right: 10px;
+              color: $black-color;
+              font-weight: 600;
+              display: flex;
+              justify-content: space-between;
+            }
+            @media ($breakpoint_ESM) {
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+      .detail-pro-price {
+        // padding-top: 20px;
+        display: flex;
+        // align-items: center;
+        gap: 5px;
+        .dollar-p {
+          font-family: "Poppins, sans-serif";
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 1.167;
+          color: $green;
+        }
+        .dollar-l {
+          font-family: "Poppins, sans-serif";
+          font-size: 16px;
+          text-decoration: line-through;
+          line-height: 1.75;
+          color: $para-color;
+        }
+      }
+      .detail-size {
+        padding-top: 30px;
+        display: flex;
+        align-items: center;
+        @media ($breakpoint_450) {
+          flex-direction: column;
+          align-items: start;
+        }
+        .detail-weight {
+          padding-left: 10px;
+          ul {
+            display: flex;
+            padding: 0;
+            gap: 10px;
+            margin-bottom: 6px;
+            li {
+              list-style: none;
+              padding: 2px 6px;
+              border: 1px solid $borderh-color;
+             border-radius: 5px;
+             cursor: pointer;
+             font-size: 16px;
+            }
+            .active {
+              background-color: $dark-green;
+              padding: 2px 6px;
+              color: $white;
+              
+            }
+          }
+        }
+      }
+      .cart-btn {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        .add-cart {
+          a {
+            color: $white-color;
+            background-color: $dark-green;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            &:hover {
+              background-color: $green;
+            }
+          }
+        }
+        .whislist {
+          border: 1px solid $borderh-color;
+          padding: 5px 7px;
+          border-radius: 5px;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            background-color: $dark-green;
+            color: $white-color;
+          }
+        }
+      }
+    }
+  }
+}
+.discrip-section {
+  .discrip-data {
+    border: 1px solid $borderh-color;
+    padding: 30px;
+    @media ($breakpoint_50) {
+      padding: 30px 20px;
+    }
+    .react-tabs {
+      .react-tabs__tab-list {
+        .react-tabs__tab {
+          // border-bottom: 2px solid $dark-green !important;
+          // outline: none;
+          // border-left: none;
+          // border-right: none;
+          // border-top: none;
+        }
+        .react-tabs__tab--selected {
+          border-bottom: 2px solid $dark-green !important;
+          // outline: none;
+          border-left: none;
+          border-right: none;
+          border-top: none;
+        }
+      }
+      .react-tabs__tab-panel--selected {
+        .des-content {
+          margin-top: 30px;
+          p {
+            font-size: 16px;
+            color: $para-color;
+            margin: 0;
+          }
+          h3 {
+            color: $green;
+            margin: 15px 0;
+          }
+        }
+        .info-content {
+          margin-top: 30px;
+          .info-con-p {
+            color: $para-color;
+            font-size: 16px;
+          }
+          .info-details {
+            ul {
+              padding: 0;
+              margin: 0;
+              li {
+                padding: 5px 0;
+                color: $para-color;
+                list-style: none;
+                display: flex;
+                align-items: center;
+                label {
+                  min-width: 100px;
+                  margin-right: 10px;
+                  color: $black-color;
+                  font-weight: 600;
+                  display: flex;
+                  justify-content: space-between;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.pop-section {
+  padding: 80px 0;
+  .pop-product {
+    .pop-heading {
+      text-align: center;
+      margin-bottom: 20px;
+      h2 {
+        color: $green;
+      }
+      p {
+        max-width: 620px;
+        font-size: 16px;
+        color: $para-color;
+        margin: 0 auto;
+      }
+    }
+    .pop-cards {
+      .first-card {
+        background: $white-color;
+        padding: 14px 10px;
+        border-radius: 10px;
+        margin-bottom: 14px;
+        transform: scale(0.9);
+        transition: all 0.3s linear;
+
+        .image-div {
+          position: relative;
+
+          img {
+            width: 100%;
+            height: 270px;
+            border-radius: 10px;
+            @media ($breakpoint_SM) {
+              height: 280px;
+            }
+          }
+          .new-badge {
+            position: absolute;
+            right: 0px;
+            background: $green;
+            padding: 7px 25px;
+            clip-path: polygon(
+              100% 0,
+              100% 55%,
+              100% 100%,
+              2% 100%,
+              18% 50%,
+              0% 0%
+            );
+            font-size: 17px;
+            padding: 6px 33px;
+            width: auto;
+            top: 10px;
+          }
+
+          .wish-list {
+            color: $black-text;
+            background: $green;
+            width: 42px;
+            padding: 7px 3px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s linear;
+            font-size: 33px;
+            &:hover {
+              color: red;
+            }
+          }
+
+          .add-cart-div {
+            display: flex;
+            margin: auto;
+            position: absolute;
+            justify-content: center;
+            width: 100%;
+            bottom: 20px;
+            opacity: 0;
+            transition: all 0.3s linear;
+
+            .add-cart {
+              background: $green;
+              font-size: 13px;
+              font-weight: 500;
+              border-radius: 50%;
+              padding: 10px;
+              width: auto;
+              white-space: nowrap;
+              text-align: center;
+              margin: 0 10px;
+              border: none;
+              transition: all 0.3s linear;
+              &:hover {
+                color: $white-text;
+              }
+            }
+          }
+        }
+
+        .title {
+          text-align: center;
+          padding: 10px 0px;
+          margin: 0;
+          font-size: 20px;
+          color: $black-text;
+        }
+
+        .discription {
+          text-align: center;
+          color: grey;
+          font-weight: 500;
+          font-size: 18px;
+          padding: 0 30px;
+          @media ($breakpoint_SM) {
+            padding: 0;
+          }
+        }
+
+        .mrp {
+          text-align: center;
+          font-size: 20px;
+          font-weight: 700;
+          color: $green;
+        }
+
+        &:hover {
+          .image-div {
+            .add-cart-div {
+              bottom: 40px;
+              opacity: 1;
+            }
+          }
+
+          box-shadow: 0px 0px 5px #bdbcbc;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}

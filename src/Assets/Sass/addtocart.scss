@@ -1,0 +1,138 @@
+.cart{
+    margin-top: 45px;
+    padding: 40px 0px;
+    .head-section{
+        background: $white-color;
+        border-bottom: 1px solid #eeeeee;
+
+        .cart-home{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0px;
+            p{
+                a{
+                    text-decoration: none;
+                    color: $green;
+                }
+                span{
+                    padding: 0 10px;
+                }
+            }
+        }
+    }
+
+    .table-section{
+        padding: 30px 0px;
+        @media($breakpoint_MD){
+            overflow: scroll;
+            padding-bottom: 0;
+        
+        }
+        .table-main-div{
+            @media($breakpoint_MD){
+            width: 812px;
+            }
+                table{
+                width: 100%;
+                thead{
+                    background: $light-white;
+                    tr{
+                        th{
+                            padding: 10px;
+                            white-space: nowrap;
+
+                            &:first-child {
+                                border-radius: 10px 0px 0px 0px;
+                            }
+                            &:last-child {
+                                border-radius: 0px 10px 0px 0px;
+                            }
+                          
+                        }
+                     
+                    }
+                }
+                tbody{
+                    tr{
+                        background: #eeeeee8a;
+                        color: $black-text;
+                     
+                        td{
+                            padding: 10px;
+                            white-space: nowrap;
+                            .product{
+                                display: flex;
+                                gap: 10px;
+                                align-items: center;
+                                text-decoration:  none;
+                                color: $black-text;
+                                img{
+                                    height: 70px;
+                                    width: 50px;
+                                }
+                                p{
+                                    margin: 0;
+                                }
+                            }
+                            .incre{
+                                display: flex;
+                                 align-items: center;
+                                color: $black-text;
+                                width: 86px;
+                                border: 1px solid #eaeaea;
+                                border-radius: 10px;
+                                button{
+                                    background: $white-color;
+                                    border: none;
+                                    padding: 8px 10px;
+                                    &:first-child {
+                                        border-radius: 10px 0px 0px 10px;
+                                    }
+                                    &:last-child {
+                                        border-radius: 0px 10px 10px 0px;
+                                    }
+                                }
+                                p{
+                                    margin: 0;
+                                    background: $white-color;
+                                    padding: 8px 10px;
+
+                                }
+                            }
+                            .delete-btn{
+                                background: none;
+                                border: none;
+                                svg{
+                                    transition: all 0.3s linear;
+                                    
+                                }
+                                &:hover{
+                                    svg{
+                                        color: red;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .submit-btn{
+        text-align: end;
+        margin-top: 10px;
+        a{
+            color:$black-text;
+            background: $green;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.3s linear;
+            &:hover{
+                color: $white-text;
+            }
+        }
+    }
+}
