@@ -15,6 +15,7 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import patato from './../../Assets/Images/patato.webp';
 
 const OurProducts = () => {
     const Navigate = useNavigate();
@@ -99,7 +100,8 @@ const OurProducts = () => {
                                             <SwiperSlide>
                                                 <div className='first-card'>
                                                     <div className='image-div'>
-                                                        <img src={`data:image/png;base64, ${item?.image}`} />
+                                                        {/* <img src={`data:image/png;base64, ${item?.image}`} /> */}
+                                                        <img src={patato} alt="" />
                                                         <p className='new-badge'>New</p>
                                                         <div className='add-cart-div'>
 
@@ -112,6 +114,24 @@ const OurProducts = () => {
                                                     <h3 className='mrp'>{item?.price ? `$${item?.price}` : ''} </h3>
                                                 </div>
                                             </SwiperSlide>
+                                            <SwiperSlide>
+                                                <div className='first-card'>
+                                                    <div className='image-div'>
+                                                        {/* <img src={`data:image/png;base64, ${item?.image}`} /> */}
+                                                        <img src={patato} alt="" />
+                                                        <p className='new-badge'>New</p>
+                                                        <div className='add-cart-div'>
+
+                                                            <button className='add-cart' onClick={() => AddtoCart(item)}>
+                                                                <ShoppingCartIcon />
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <p className='title'>{item?.title}</p>
+                                                    <h3 className='mrp'>{item?.price ? `$${item?.price}` : ''} </h3>
+                                                </div>
+                                            </SwiperSlide>
+                                            
                                         </>
                                     ))}
                                 </Swiper>

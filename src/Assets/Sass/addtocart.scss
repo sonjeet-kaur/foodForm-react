@@ -1,114 +1,135 @@
-.cart{
+.cart {
     margin-top: 45px;
     padding: 40px 0px;
-    .head-section{
+
+    .head-section {
         background: $white-color;
         border-bottom: 1px solid #eeeeee;
 
-        .cart-home{
+        .cart-home {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 0px;
-            p{
-                a{
+
+            p {
+                a {
                     text-decoration: none;
                     color: $green;
                 }
-                span{
+
+                span {
                     padding: 0 10px;
                 }
             }
         }
     }
 
-    .table-section{
+    .table-section {
         padding: 30px 0px;
-        @media($breakpoint_MD){
+
+        @media($breakpoint_MD) {
             overflow: scroll;
             padding-bottom: 0;
-        
+
         }
-        .table-main-div{
-            @media($breakpoint_MD){
-            width: 812px;
+
+        .table-main-div {
+            @media($breakpoint_MD) {
+                width: 812px;
             }
-                table{
+
+            table {
                 width: 100%;
-                thead{
+
+                thead {
                     background: $light-white;
-                    tr{
-                        th{
+
+                    tr {
+                        th {
                             padding: 10px;
                             white-space: nowrap;
 
                             &:first-child {
                                 border-radius: 10px 0px 0px 0px;
                             }
+
                             &:last-child {
                                 border-radius: 0px 10px 0px 0px;
                             }
-                          
+
                         }
-                     
+
                     }
                 }
-                tbody{
-                    tr{
+
+                tbody {
+                    tr {
                         background: #eeeeee8a;
                         color: $black-text;
-                     
-                        td{
+
+                        td {
                             padding: 10px;
                             white-space: nowrap;
-                            .product{
+
+                            .product {
                                 display: flex;
                                 gap: 10px;
                                 align-items: center;
-                                text-decoration:  none;
+                                text-decoration: none;
                                 color: $black-text;
-                                img{
+
+                                img {
                                     height: 70px;
                                     width: 50px;
                                 }
-                                p{
+
+                                p {
                                     margin: 0;
                                 }
                             }
-                            .incre{
+
+                            .incre {
                                 display: flex;
-                                 align-items: center;
+                                align-items: center;
                                 color: $black-text;
                                 width: 86px;
                                 border: 1px solid #eaeaea;
                                 border-radius: 10px;
-                                button{
+
+                                button {
                                     background: $white-color;
                                     border: none;
                                     padding: 8px 10px;
+
                                     &:first-child {
                                         border-radius: 10px 0px 0px 10px;
                                     }
+
                                     &:last-child {
                                         border-radius: 0px 10px 10px 0px;
                                     }
                                 }
-                                p{
+
+                                p {
                                     margin: 0;
                                     background: $white-color;
                                     padding: 8px 10px;
 
                                 }
                             }
-                            .delete-btn{
+
+                            .delete-btn {
                                 background: none;
                                 border: none;
-                                svg{
+
+                                svg {
                                     transition: all 0.3s linear;
-                                    
+
                                 }
-                                &:hover{
-                                    svg{
+
+                                &:hover {
+                                    svg {
                                         color: red;
                                     }
                                 }
@@ -119,20 +140,57 @@
             }
         }
     }
-    .submit-btn{
+
+    .submit-btn {
         text-align: end;
         margin-top: 10px;
-        a{
-            color:$black-text;
+
+        a {
+            color: $black-text;
             background: $green;
             padding: 10px;
             border: none;
             border-radius: 10px;
             text-decoration: none;
             transition: all 0.3s linear;
-            &:hover{
+
+            &:hover {
                 color: $white-text;
             }
         }
     }
 }
+
+
+
+.main-cart {
+    padding-top: 150px;
+    text-align: center;
+
+    .fav-icon-sec {
+        .f-icon {
+            font-size: 180px;
+            color: $green;
+        }
+
+        .fav-icon-heading {
+            h3 {
+                padding-bottom: 20px;
+            }
+        }
+
+     
+    }
+    .back-home {
+        .back-to-home {
+            background: $green;
+            color: #fff;
+            font-size: 16px;
+            padding: 14px 60px;
+            text-decoration: none;
+            border: none;
+            margin-top: 10px;
+        }
+    }
+}
+

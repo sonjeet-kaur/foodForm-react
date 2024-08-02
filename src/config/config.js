@@ -5,7 +5,7 @@ export const website = '';
 export const shortTitle = 'ecommerce';
 export const titleDescription = 'ecommerce-site';
 
-export const api_url = 'http://192.168.29.155:8002/api/v1/';
+export const api_url = 'http://192.168.18.39:8005/api/v1/';
 
 
 

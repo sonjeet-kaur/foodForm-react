@@ -1,0 +1,133 @@
+jQuery(document).ready(function($) {
+
+    "use strict";
+
+
+    var swiperGallery = [];
+    var swiperIterator = 1;
+
+    jQuery('.dtoc-core-carousel-container').each(function() {
+
+        var $swiperItem = jQuery(this);
+        var swiperUniqueId = 'swiper-core-id-'+swiperIterator;
+
+        $swiperItem.attr('id', swiperUniqueId);
+
+
+        var $setttings_obj = $swiperItem.attr('data-settings');
+        var $setttings = jQuery.parseJSON($setttings_obj);
+
+
+        var slides_per_view   = parseInt($setttings['slides_per_view'], 10);
+        var bullet_pagination = parseInt($setttings['bullet_pagination'], 10);
+        var arrow_pagination  = parseInt($setttings['arrow_pagination'], 10);
+
+
+        var pagination_class = '';
+        var pagination_type = '';
+
+        if(bullet_pagination) {
+            var pagination_class = '.'+$swiperItem.find('.dtoc-swiper-bullet-pagination').attr('class');
+            var pagination_type = 'bullets';
+        }
+
+        if(slides_per_view == 1) {
+            var breakpoint_slides_1 = breakpoint_slides_2 = breakpoint_slides_3 = breakpoint_slides_4 = 1;
+        } else if(slides_per_view == 2) {
+            var breakpoint_slides_1 = 2; var breakpoint_slides_2 = 2; var breakpoint_slides_3 = 2; var breakpoint_slides_4 = 1;
+        } else if(slides_per_view == 3) {
+            var breakpoint_slides_1 = 3; var breakpoint_slides_2 = 3; var breakpoint_slides_3 = 2; var breakpoint_slides_4 = 1;
+        } else if(slides_per_view >= 4) {
+            var breakpoint_slides_1 = 4; var breakpoint_slides_2 = 3; var breakpoint_slides_3 = 2; var breakpoint_slides_4 = 1;
+        }
+
+        // Generate swiper
+        swiperGallery[swiperUniqueId] = new Swiper('#'+swiperUniqueId, {
+
+            initialSlide: 0,
+            simulateTouch: true,
+            roundLengths: true,
+            spaceBetween: 20,
+            keyboardControl: true,
+            paginationClickable: true,
+            autoHeight: true,
+
+            slidesPerView: slides_per_view,
+
+            loop: true,
+            pagination: {
+                el: pagination_class,
+                type: pagination_type,
+                clickable: true,
+            },
+
+            breakpoints: {
+                0: {
+                    slidesPerView: breakpoint_slides_4,
+                },
+                768: {
+                    slidesPerView: breakpoint_slides_3,
+                },
+                1025: {
+                    slidesPerView: breakpoint_slides_2,
+                },
+                1280: {
+                    slidesPerView: breakpoint_slides_1,
+                }
+            }
+
+        });
+
+        // Arrow pagination
+
+        if(arrow_pagination) {
+
+            $swiperItem.find('.dtoc-swiper-arrow-pagination .dtoc-swiper-arrow-prev').on('click', function(e) {
+                var swiperUniqueId = $swiperItem.attr('id');
+                swiperGallery[swiperUniqueId].slidePrev();
+                e.preventDefault();
+            });
+
+            $swiperItem.find('.dtoc-swiper-arrow-pagination .dtoc-swiper-arrow-next').on('click', function(e) {
+                var swiperUniqueId = $swiperItem.attr('id');
+                swiperGallery[swiperUniqueId].slideNext();
+                e.preventDefault();
+            });
+
+        }
+
+        swiperIterator++;
+
+    });
+
+
+    // Mailchimp
+
+    jQuery('form[name="dtoc-mailchimp-form"]').on( 'submit', function(e) {
+
+        var this_item = jQuery(this);
+        var url = 'index.php?route=designthemes/mailchimp/subscribe';
+        var dtoc_email = this_item.find('input[name="dtoc_email"]').val();
+        var dtoc_api_key = this_item.find('input[name="dtoc_api_key"]').val();
+        var dtoc_list_id = this_item.find('input[name="dtoc_list_id"]').val();
+
+        jQuery.ajax({
+            url 		: url,
+            type		: 'post',
+            data:
+            {
+                dtoc_email  : dtoc_email,
+                dtoc_api_key: dtoc_api_key,
+                dtoc_list_id: dtoc_list_id
+            },
+            success		: function(json) {
+                this_item.parents('.mailchimp_newsletter').find('.mailchimp_notice').html(json['html']);
+            }
+        });
+
+        e.preventDefault();
+
+    });
+
+
+});

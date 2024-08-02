@@ -10,6 +10,8 @@ import Checkout from './Components/PublicLayout/Checkout';
 import PrivateRoutes from './Routes/PrivateRoutes';
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Header from './Components/HeadLayout/Header';
+import Whishlist from './Components/PublicLayout/Whishlist';
 
 function App() {
 
@@ -22,7 +24,7 @@ function App() {
   function PublicLayout() {
     return (
       <>
-          <Header1 />
+          <Header1/>
         <Outlet />
         {/* <Footer /> */}
       </>
@@ -46,6 +48,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/cart" element={<AddtoCart />} />
                     <Route path='/checkout' element={<Checkout />} />
+                    <Route path="/whislist" element={<Whishlist />} />
                   </Route>
                 </Route>
               </>

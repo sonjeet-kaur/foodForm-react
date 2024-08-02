@@ -58,7 +58,7 @@ header {
     padding: 10px;
     z-index: 999;
     transition: 0.65s cubic-bezier(0.05, 0.2, 0.1, 1);
-    background: $black-color;
+    background: $green;
     box-shadow: 0px 0px 4px #adadad;
 
     .container-layout {
@@ -67,11 +67,14 @@ header {
         justify-content: space-between;
         border-radius: 10px;
         transition: 0.65s cubic-bezier(0.05, 0.2, 0.1, 1);
+        padding: 0 30px !important;
     }
 
     .left-header {
         position: relative;
         z-index: 1;
+
+
 
         @media ($breakpoint_LG) {
             width: 100%;
@@ -103,9 +106,10 @@ header {
             display: inline-block;
             width: 155px;
             text-decoration: none;
-            color: $green;
+            color: $white;
             font-size: 21px;
             font-weight: 700;
+
 
 
             img {
@@ -149,9 +153,9 @@ header {
             display: none;
         }
 
-        .nav {
-            justify-content: center;
-        }
+        // .nav {
+        //     justify-content: center;
+        // }
 
         .nav-item {
 
@@ -163,9 +167,7 @@ header {
                 color: $white-text !important;
                 box-shadow: unset !important;
 
-                &:hover {
-                    color: $green !important;
-                }
+
             }
         }
     }
@@ -174,6 +176,36 @@ header {
         display: flex;
         align-items: center;
         gap: 10px;
+
+        .search-input {
+            padding-right: 30px;
+            position: relative;
+
+            input {
+                padding: 10px;
+                border-radius: 27px;
+                box-shadow: none;
+                border: none;
+                padding-right: 50px;
+
+                &:focus-visible {
+                    // padding: 10px;
+                    border-radius: 27px;
+                    box-shadow: none;
+                    border: none;
+                    outline: none;
+
+
+                }
+            }
+
+            .search-icon {
+                position: absolute;
+                top: 12px;
+                right: 45px;
+                color: $green;
+            }
+        }
 
         button {
             background: none;
@@ -187,6 +219,17 @@ header {
         .center-header {
             position: relative;
 
+            .whistlist-icon {
+                padding-right: 50px;
+                color: #fff;
+            }
+
+            .logout-button {
+                .log-out-btn {
+                    padding-left: 10px;
+                }
+            }
+
             a {
                 position: absolute;
                 right: 10px;
@@ -195,10 +238,9 @@ header {
                 color: $white-text;
                 transition: all 0.3s linear;
 
-                &:hover {
-                    color: $green;
-                }
+
             }
+
 
             span {
                 position: absolute;

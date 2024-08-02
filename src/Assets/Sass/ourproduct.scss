@@ -1,6 +1,7 @@
 .our-product {
-    padding: 50px 0px;
+    padding: 120px 0px;
     background: $light-white;
+    height: 100vh;
 
     .popular-product {
         text-align: center;
@@ -196,7 +197,9 @@
                 .swiper-button-prev{
                     background: #63b496;
                     padding: 5px;
-                    border-radius: 50%;
+                    // border-radius: 50%;
+                    border-radius: 12%;
+                    margin-left: -10px;
                     width: 42px;
                     &::after{
                         font-size: 22px;
@@ -207,7 +210,9 @@
                 .swiper-button-next{
                     background: #63b496;
                     padding: 5px;
-                    border-radius: 50%;
+                    // border-radius: 50%;
+                    border-radius: 12%;
+                    margin-right: -10px;
                     width: 42px;
                     &::after{
                         font-size: 22px;

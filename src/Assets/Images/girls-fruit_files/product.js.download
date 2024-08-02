@@ -1,0 +1,223 @@
+jQuery(document).ready(function($) {
+
+    "use strict";
+
+
+    // Swiper
+
+    var swiperGallery = [];
+    var swiperIterator = 1;
+
+    jQuery('.dtoc-product-module-carousel-container').each(function() {
+
+        var $swiperItem = jQuery(this);
+        var swiperUniqueId = 'swiper-product-id-'+swiperIterator;
+
+        $swiperItem.attr('id', swiperUniqueId);
+
+        var $setttings_obj = $swiperItem.attr('data-settings');
+        var $setttings = jQuery.parseJSON($setttings_obj);
+
+        var slides_per_view   = parseInt($setttings['carousel_slides_per_view'], 10);
+        var bullet_pagination = parseInt($setttings['carousel_bullet_pagination'], 10);
+        var multirow          = parseInt($setttings['carousel_multirow'], 10);
+        var arrow_pagination  = parseInt($setttings['carousel_arrow_pagination'], 10);
+
+        var pagination_class = '';
+        var pagination_type = '';
+
+        if(bullet_pagination) {
+            var pagination_class = '.'+$swiperItem.find('.dtoc-swiper-bullet-pagination').attr('class');
+            var pagination_type = 'bullets';
+        }
+
+        var auto_height = true;
+        var slides_per_column = 1;
+        if(multirow) {
+            auto_height = false;
+            slides_per_column = 2;
+        }
+
+        if(slides_per_view == 1) {
+            var breakpoint_slides_1 = breakpoint_slides_2 = breakpoint_slides_3 = breakpoint_slides_4 = 1;
+        } else if(slides_per_view == 2) {
+            var breakpoint_slides_1 = 2; var breakpoint_slides_2 = 2; var breakpoint_slides_3 = 2; var breakpoint_slides_4 = 1;
+        } else if(slides_per_view == 3) {
+            var breakpoint_slides_1 = 3; var breakpoint_slides_2 = 3; var breakpoint_slides_3 = 2; var breakpoint_slides_4 = 1;
+        } else if(slides_per_view >= 4) {
+            var breakpoint_slides_1 = 4; var breakpoint_slides_2 = 3; var breakpoint_slides_3 = 2; var breakpoint_slides_4 = 1;
+        }
+
+        // Generate swiper
+        swiperGallery[swiperUniqueId] = new Swiper('#'+swiperUniqueId, {
+
+            initialSlide: 0,
+            simulateTouch: true,
+            roundLengths: true,
+            spaceBetween: 30,
+            keyboardControl: true,
+            paginationClickable: true,
+            autoHeight: auto_height,
+
+            slidesPerView: slides_per_view,
+            slidesPerColumn: slides_per_column,
+            slidesPerColumnFill: 'row',
+
+            pagination: {
+                el: pagination_class,
+                type: pagination_type,
+                clickable: true,
+            },
+
+            breakpoints: {
+                0: {
+                    slidesPerView: breakpoint_slides_4,
+                },
+                768: {
+                    slidesPerView: breakpoint_slides_3,
+                },
+                1025: {
+                    slidesPerView: breakpoint_slides_2,
+                },
+                1280: {
+                    slidesPerView: breakpoint_slides_1,
+                }
+            }
+
+        });
+
+        // Arrow pagination
+
+        if(arrow_pagination) {
+
+            $swiperItem.find('.dtoc-swiper-arrow-pagination .dtoc-swiper-arrow-prev').on('click', function(e) {
+                var swiperUniqueId = $swiperItem.attr('id');
+                swiperGallery[swiperUniqueId].slidePrev();
+                e.preventDefault();
+            });
+
+            $swiperItem.find('.dtoc-swiper-arrow-pagination .dtoc-swiper-arrow-next').on('click', function(e) {
+                var swiperUniqueId = $swiperItem.attr('id');
+                swiperGallery[swiperUniqueId].slideNext();
+                e.preventDefault();
+            });
+
+        }
+
+        swiperIterator++;
+
+    });
+
+
+    // Isotope
+
+    jQuery('.apply-isotope').each(function() {
+
+        var this_item = jQuery(this);
+
+        this_item.isotope({
+            itemSelector: '.product-layout',
+            percentPosition: true,
+            masonry: {
+                columnWidth: '.grid-sizer'
+            },
+        });
+
+        window.setTimeout(function(){
+            this_item.isotope();
+        }, 1400);
+
+    });
+
+    jQuery( window ).resize(function() {
+        if(jQuery('.apply-isotope').length) {
+            jQuery('.apply-isotope').isotope( 'destroy' ).isotope().isotope( 'reloadItems' );
+        }
+    });
+
+
+    // Tabs
+
+    jQuery('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        window.dispatchEvent(new Event('resize'));
+    })
+
+
+    // Quick View
+
+    jQuery('.btn-quickview').on( 'click', function() {
+
+        var this_item = jQuery(this);
+        var product_id = this_item.data('productid');
+
+        var url = 'index.php?route=designthemes/quick_view&product_id=' + product_id;
+
+        jQuery.ajax({
+            url 		: url,
+            type		: 'get',
+            success		: function(json) {
+                if(json['success'] == true) {
+
+                    jQuery('body').append(json['html']);
+                    jQuery('#dtocQuickViewModal').modal('show');
+
+                    jQuery('#dtocQuickViewModal').on('shown.bs.modal', function () {
+                        if(jQuery('.dtoc-quickview-product-carousel').length) {
+                            dtocProductCarousel('.dtoc-quickview-product-carousel');
+                        }
+                    });
+
+                    jQuery("#dtocQuickViewModal").on('hidden.bs.modal', function () {
+                        jQuery("#dtocQuickViewModal").remove();
+                    });
+
+                }
+            }
+        });
+
+    });
+
+
+    // Swiper - Single & Quick View
+
+    function dtocProductCarousel(element) {
+
+        var galleryThumbs = new Swiper(element+'.dtoc-product-carousel-thumbs', {
+            spaceBetween: 10,
+            slidesPerView: 4,
+            freeMode: true,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+        });
+
+        var galleryTop = new Swiper(element+'.dtoc-product-carousel-top', {
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.dtoc-swiper-arrow-next',
+                prevEl: '.dtoc-swiper-arrow-prev',
+            },
+            thumbs: {
+                swiper: galleryThumbs
+            }
+        });
+
+    }
+    if(jQuery('.dtoc-single-product-carousel').length) {
+        dtocProductCarousel('.dtoc-single-product-carousel');
+    }
+
+
+
+    // Magnific Popup
+
+    if(jQuery('.dtoc-image-popup').length) {
+        jQuery('.dtoc-image-popup').magnificPopup({
+            type: 'image',
+            gallery: {
+                enabled: true
+            }
+        });
+    }
+
+
+});
