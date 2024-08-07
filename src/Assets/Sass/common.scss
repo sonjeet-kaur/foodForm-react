@@ -77,3 +77,16 @@ h3 {
     overflow-x: hidden !important;
   }
 }
+
+
+
+
+@media(max-width:1400px) {
+
+  html,
+  body {
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow-x: hidden !important;
+  }
+}

@@ -16,6 +16,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import LogoutIcon from '@mui/icons-material/Logout';
 
+
 const Header1 = () => {
   const Navigate = useNavigate();
   const location = useLocation();
@@ -27,7 +28,7 @@ const Header1 = () => {
   const onOpenModal2 = () => setonOpenModal2(true);
   const onCloseModal2 = () => setonOpenModal2(false);
   const [allData, setAllData] = useState();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
 
   useEffect(() => {
     if (location.pathname === "/contact") {
@@ -110,6 +111,9 @@ const Header1 = () => {
     Navigate('/login');
   }
 
+  const hadnleClick2 = () => {
+    Navigate('/whislist')
+  }
   return (
     <>
       <div className="top-header">
@@ -162,7 +166,7 @@ const Header1 = () => {
 
             <div className="center-header d-flex">
               <div className="whistlist-icon">
-                <FavoriteBorderIcon />
+                <FavoriteBorderIcon onClick={hadnleClick2} />
               </div>
 
               <Link to="/cart"><ShoppingCartIcon /></Link>

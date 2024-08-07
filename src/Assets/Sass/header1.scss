@@ -220,6 +220,7 @@ header {
             position: relative;
 
             .whistlist-icon {
+                cursor: pointer;
                 padding-right: 50px;
                 color: #fff;
             }
@@ -590,4 +591,16 @@ $sidebar_width: 300px;
 .newspeakingmodal {
     width: 500px;
     padding: 50px 50px !important;
+}
+
+
+
+@media(max-width:1400px) {
+
+    html,
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+    }
 }
