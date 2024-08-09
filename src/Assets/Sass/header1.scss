@@ -245,9 +245,23 @@ header {
 
             span {
                 position: absolute;
-                color: $white-text;
-                top: -18px;
+                color: var(--txt-white);
+                top: -17px;
                 right: 4px;
+                color: #000;
+                font-size: 12px;
+                font-weight: 600;
+                border-radius: 100%;
+                position: absolute;
+                /* right: 0; */
+                /* top: 0; */
+                text-align: center;
+                height: 18px;
+                width: 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #fff;
 
             }
         }

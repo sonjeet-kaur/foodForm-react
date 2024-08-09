@@ -15,6 +15,7 @@ import 'react-responsive-modal/styles.css';
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import LogoutIcon from '@mui/icons-material/Logout';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 
 
 const Header1 = () => {
@@ -160,7 +161,7 @@ const Header1 = () => {
           </div>
           <div className="navs-icons">
             <div className="search-input">
-              <input type="search" placeholder="Search" />
+              <input type="text" placeholder="Search" />
               <SearchIcon className="search-icon" />
             </div>
 
@@ -169,7 +170,7 @@ const Header1 = () => {
                 <FavoriteBorderIcon onClick={hadnleClick2} />
               </div>
 
-              <Link to="/cart"><ShoppingCartIcon /></Link>
+              <Link to="/cart"><ShoppingBagIcon /></Link>
               {/* <div className="logout-button">
                 <LogoutIcon className="log-out-btn" />
               </div> */}
